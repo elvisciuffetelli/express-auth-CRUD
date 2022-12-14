@@ -1,6 +1,7 @@
 const express = require('express')
 const colors = require('colors');
 const dotenv = require('dotenv').config();
+const cors = require('cors')
 const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
 const PORT = process.env.PORT || 8000;
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 8000;
 
 
 const app = express()
+app.use(cors())
 connectDB(app.listen(PORT, () => console.log('Listen on port ' + PORT)))
 
 app.use(express.json())
