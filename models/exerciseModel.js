@@ -9,6 +9,18 @@ const exerciseSchema = mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Please add a name value']
+    },
+    sets: {
+        type: Number,
+        required: [true, 'Please add a sets value']
+    },
+    reps: {
+        type: Number,
+        required: [true, 'Please add a reps value']
+    },
+    weight: {
+        type: Number,
+        required: [true, 'Please add a weight value']
     }
 }, {
     timestamps: true
