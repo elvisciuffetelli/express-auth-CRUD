@@ -16,6 +16,10 @@ const exerciseSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a name value"],
     },
+    setsNumber: {
+      type: Number,
+      required: [true, "Please add a sets number"],
+    },
     sets: [setSchema],
   },
   {
