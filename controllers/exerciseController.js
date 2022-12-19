@@ -57,19 +57,8 @@ const updateExercise = asyncHandler(async (req, res) => {
 
   const updatedExercise = await Exercise.findByIdAndUpdate(
     req.params.id,
-    {
-      $set: {
-        "sets.$[set]": req.body.set,
-      },
-    },
-    {
-      new: true,
-      arrayFilters: [
-        {
-          "set._id": req.body.setId,
-        },
-      ],
-    }
+    { $set: { sets: req.body.sets } },
+    { new: true }
   );
 
   res.status(200).json(updatedExercise);
